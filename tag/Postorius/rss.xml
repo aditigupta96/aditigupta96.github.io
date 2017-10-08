@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>http://aditigupta96.github.io/</title>
+   
+   <link>http://aditigupta96.github.io/</link>
+   <description>Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks</description>
+   <language>en-uk</language>
+   <managingEditor> Aditi Gupta</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Stats Implementation in Mailman3</title>
+	  <link>//Stats-Implementation-in-Mailman3</link>
+	  <author>Aditi Gupta</author>
+	  <pubDate>2016-08-12T05:30:00+05:30</pubDate>
+	  <guid>//Stats-Implementation-in-Mailman3</guid>
+	  <description><![CDATA[
+	     <p><em>My next task was to implement the stats feature in Mailman3.It had three parts.This is the detailed report of the implementation.</em></p>
+
+<blockquote>
+  <p><strong>Overview</strong><br />
+<strong>Problem:</strong> Monthly reports are executed at the first of the month for prior month. Details in the report include, total number of members, subscription requests, digest members, and unsubscribes.</p>
+</blockquote>
+
+<p><strong>Desired Solution:</strong> <em>Add additional stats for the following:</em></p>
+<ul>
+<li> Number of unsubscribers for : 
+<ul>
+<li>Members option page</li>
+<li>Disabled address</li>
+<li>Member mgt page</li>
+<li>Admin mass Unsubscription</li>
+<li>email confirmation</li>
+(I am still working on the task of counting unsubscriptions through email confirmation.)
+</ul>
+</li>
+
+<li> Number of total unique subject lines </li>
+
+<li> Number of subscribers that posted </li>
+</ul>
+
+<blockquote>
+  <p><strong>Product</strong><br />
+These are the products’ images.</p>
+</blockquote>
+<ul>
+<li> This is the list subscription page.There is a "stats" button on the top right corner of the page which redirects to the stats page.
+</li>
+<img src="assets/images/img5.gif" style="max-width:700px" /> 
+
+<li>  This is the form where the admin can view either the monthly stats by pressing the "Monthly Stats" button or can view the stats according to the start and end date entered through the form.
+</li>
+<img src="assets/images/img4.png" style="max-width:700px" /> 
+
+<li>  This is the page where the admin can view all the monthly stats.The default page shows the stats of the present month.The admin can see the stats of any month by selecting it from the left sidebar.
+</li>
+<img src="assets/images/img6.jpg" style="max-width:700px" /> 
+</ul>
+
+<blockquote>
+  <p><strong>Github</strong></p>
+</blockquote>
+
+<p><em>GitHub code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4/files">here</a>.<br />
+<em>The pull request for the code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4">here</a>.</p>
+
+<blockquote>
+  <p><strong>Functional Changes in Postorius</strong></p>
+</blockquote>
+<ul>
+<li> Modal class 'UnsubscriberStats' that stores the details of the user unsubscribed through different channels. </li>
+
+<li> Added class'UnsubscriberStatsForm' in forms.py that takes start and end date as input and filters the stats between the given dates. </li>
+
+<li> Modified list.py to store the value of unsubscribed users through different channels in database. </li>
+
+<li> Provided 'Monthly Stats' button on the form page that takes the user to the page where stats are listed month-wise. </li>
+
+<li> Used 'Hyperkitty Api' to fetch the data of emails sent to a particular mailing list in the form of json file. </li>
+
+<li> Counted the unique subjects discussed in the mailing list and filtered them according to month for displaying the stats of 'Unique Subject Lines'. </li>
+
+<li> Counted the number of subscribers that posted by filtering the json file fetched from the Hyperkitty Api. </li>
+</ul>
+
+<blockquote>
+  <p><strong>Files changed</strong></p>
+</blockquote>
+<ul>
+<li> src/postorius/forms.py </li>
+<li> src/postorius/models.py </li>
+<li> src/postorius/templates/postorius/menu/list_nav.html </li>
+<li> src/postorius/urls.py </li>
+<li> src/postorius/views/list.py </li>
+<li> src/postorius/views/user.py </li>
+</ul>
+
+<blockquote>
+  <p><strong>Files created</strong></p>
+</blockquote>
+<ul>
+<li> src/postorius/static/postorius/js/datepicker.js </li>
+<li> src/postorius/views/stats.py </li>
+<li> src/postorius/templates/postorius/lists/stats_form.html </li>
+<li> src/postorius/views/monthly_stats.py </li>
+<li> src/postorius/templates/postorius/lists/monthly_stats.html</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

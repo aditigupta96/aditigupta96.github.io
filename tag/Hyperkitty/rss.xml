@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>http://aditigupta96.github.io/</title>
+   
+   <link>http://aditigupta96.github.io/</link>
+   <description>Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks</description>
+   <language>en-uk</language>
+   <managingEditor> Aditi Gupta</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Configuration of Mailman to Hyperkitty</title>
+	  <link>//Configuration-of-Mailman-to-Hyperkitty</link>
+	  <author>Aditi Gupta</author>
+	  <pubDate>2017-07-05T05:30:00+05:30</pubDate>
+	  <guid>//Configuration-of-Mailman-to-Hyperkitty</guid>
+	  <description><![CDATA[
+	     <p>This is a quick guide to configure Mailman to hyperkitty.</p>
+
+<p>For connecting hyperkitty to Mailman and receive incoming emails from Mailman, you must install the mailman-hyperkitty module available on PyPI in Mailman’s virtualenv, and then add the following lines to <strong>mailman-hyperkitty.cfg</strong> :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="n">archiver</span><span class="p">.</span><span class="nf">hyperkitty</span><span class="p">]</span>
+<span class="ss">class: </span><span class="n">mailman_hyperkitty</span><span class="o">.</span><span class="no">Archiver</span>
+<span class="ss">enable: </span><span class="n">yes</span>
+<span class="ss">configuration: </span><span class="sr">/path/</span><span class="n">to</span><span class="o">/</span><span class="n">mailman</span><span class="o">-</span><span class="n">hyperkitty</span><span class="o">/</span><span class="n">mailman</span><span class="o">-</span><span class="n">hyperkitty</span><span class="p">.</span><span class="nf">cfg</span></code></pre></figure>
+
+<p>You must set the URL to your HyperKitty installation in that file. The path mentioned in the configuration should be an absolute path to the <strong>mailman-hyperkitty.cfg</strong> file. It is also highly recommanded to change the API secret key and in the MAILMAN_ARCHIVER_KEY variable in settings.py (or settings_local.py).</p>
+
+<p>Also, the MAILMAN_REST_API_URL in settings.py file of hyperkitty should be changed as the port 8001 is used for production and 9001 is used for development.</p>
+
+<p>Following change needs to be done in settings.py of <strong>hyperkitty/example_project</strong> :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">DEBUG</span> <span class="o">=</span> <span class="no">True</span>
+<span class="no">MAILMAN_REST_API_URL</span> <span class="o">=</span> <span class="s1">'http://localhost:9001'</span></code></pre></figure>
+
+<p>After having made these changes, you must restart Mailman. Check its log files to make sure the emails are correctly archived. You should not see “Broken archiver: hyperkitty” messages.</p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Build Hyperkitty in easy way</title>
+	  <link>//Build-Hyperkitty-in-easy-way</link>
+	  <author>Aditi Gupta</author>
+	  <pubDate>2016-06-26T05:30:00+05:30</pubDate>
+	  <guid>//Build-Hyperkitty-in-easy-way</guid>
+	  <description><![CDATA[
+	     <p><em>This is a quick guide to build hyperkitty,the archive manager.</em></p>
+
+<p><strong>HyperKitty</strong> is the archiver project for the Mailman 3 suite, allowing users to browse mailing lists, start new threads and reply to existing threads, mark messages as favorite, search archives etc.It is an open source Django application under development. It aims to provide a web interface to access GNU Mailman v3 archives.</p>
+
+<blockquote>
+  <p><strong>Required Installations</strong></p>
+</blockquote>
+<ul>
+ <li>LibSass, a C/C++ port of the Sass engine using : 
+  
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">   <span class="n">pip</span> <span class="n">install</span> <span class="n">libsass</span>
+  </code></pre></figure>
+
+ </li>
+
+ <li> Whoosh, a fast,featureful full-text indexing and searching library implemented in pure Python using : 
+  
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">   <span class="n">pip</span> <span class="n">install</span> <span class="no">Whoosh</span>
+  </code></pre></figure>
+
+ </li>
+
+</ul>
+
+<blockquote>
+  <p><strong>Setting up hyperkitty for development</strong></p>
+</blockquote>
+<ul>
+<li> Create virtual environment using : 
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">virtualenv</span> <span class="o">-</span><span class="nb">p</span> <span class="sr">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">python2</span> <span class="n">venv2</span></code></pre></figure>
+
+   (Hyperkitty is written in Python2)
+</li>
+
+<li> Activate the virtual environment : 
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="n">venv2</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span></code></pre></figure>
+
+</li>
+
+<li> Clone the hyperkitty repo from gitlab :
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="n">git</span> <span class="nb">clone</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">gitlab</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">mailman</span><span class="o">/</span><span class="n">hyperkitty</span><span class="p">.</span><span class="nf">git</span>
+    <span class="n">cd</span> <span class="n">hyperkitty</span>
+    <span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="nf">py</span> <span class="n">develop</span></code></pre></figure>
+
+   (Make sure to  install mailmanclient first)
+</li>
+</ul>
+<blockquote>
+  <p><strong>Configuration</strong></p>
+</blockquote>
+
+<p>Create a <em>settings_local.py</em> in <em>hyperkitty/example_project/</em> repository for development setup having following contents :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">DEBUG</span> <span class="o">=</span> <span class="no">True</span>
+<span class="no">TEMPLATE_DEBUG</span> <span class="o">=</span> <span class="no">DEBUG</span>
+<span class="no">USE_SSL</span> <span class="o">=</span> <span class="no">False</span></code></pre></figure>
+
+<blockquote>
+  <p><strong>Setting up database</strong></p>
+</blockquote>
+
+<p><em>Create the Hyperkitty databases using :</em></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">migrate</span> <span class="o">--</span><span class="n">pythonpath</span> <span class="n">example_project</span> <span class="o">--</span><span class="n">settings</span> <span class="n">settings</span></code></pre></figure>
+
+<blockquote>
+  <p><strong>Running HyperKitty</strong></p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">runserver</span> <span class="o">--</span><span class="n">pythonpath</span> <span class="n">example_project</span> <span class="o">--</span><span class="n">settings</span> <span class="n">settings</span></code></pre></figure>
+
+<p><em>Make sure to  start mailman first using :</em></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mailman</span> <span class="n">start</span></code></pre></figure>
+
+<p>You would be able to see the hyperkitty page with the message <strong>“No archived lists yet”.</strong></p>
+
+<blockquote>
+  <p><strong>Importing mailing Lists from mailman</strong></p>
+</blockquote>
+
+<p>To view the mailing lists created by you, you need to follow the given steps :</p>
+<ul>
+<li>Type the following commands in hyperkitty/example_project directory after activating the virtual environment:
+    
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="nf">py</span> <span class="n">shell</span>
+    <span class="n">from</span> <span class="n">hyperkitty</span><span class="p">.</span><span class="nf">lib</span><span class="p">.</span><span class="nf">mailman</span> <span class="n">import</span> <span class="n">get_new_lists_from_mailman</span>
+    <span class="n">get_new_lists_from_mailman</span><span class="p">()</span>
+    </code></pre></figure>
+
+</li>
+<li>Start the server again. Uncheck the *“Hide inactive”* option. You would be able to see all the lists in *“By name”* option.</li>
+</ul>
+
+<blockquote>
+  <p><strong>View emails in hyperkitty</strong></p>
+</blockquote>
+
+<p><em>Since,we are running hyperkitty on  development server and DEBUG is set to True, we can’t send emails and create threads through hyperkitty ui. We need to send mails through command line.</em></p>
+
+<p><em>To send the mails and view in hyperkitty ui, follow the following steps :</em></p>
+<ul>
+<li>Activate virtual environment (python3) for mailman using : 
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="n">venv3</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span></code></pre></figure>
+
+</li>
+
+<li> Create an email.txt file in mailman repository having following contents :
+  
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">   <span class="no">From</span><span class="p">:</span> <span class="n">aditi</span><span class="p">.</span><span class="nf">medha96</span><span class="vi">@gmail</span><span class="p">.</span><span class="nf">com</span>
+   <span class="no">To</span><span class="p">:</span> <span class="nb">test</span><span class="vi">@example</span><span class="p">.</span><span class="nf">net</span>
+   <span class="no">Subject</span><span class="p">:</span> <span class="no">Test</span>
+   <span class="no">Message</span><span class="o">-</span><span class="no">ID</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">abcd</span><span class="o">&gt;</span>
+   <span class="no">This</span> <span class="n">is</span> <span class="n">a</span> <span class="n">text</span> <span class="n">message</span>
+   </code></pre></figure>
+
+</li>
+
+<li>Inject mail in the archive queue using : 
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mailman</span> <span class="n">inject</span> <span class="o">-</span><span class="n">q</span> <span class="n">archive</span> <span class="o">-</span><span class="n">f</span> <span class="n">email</span><span class="p">.</span><span class="nf">txt</span> <span class="nb">test</span><span class="vi">@example</span><span class="p">.</span><span class="nf">net</span></code></pre></figure>
+
+</li>
+</ul>
+<p>Refresh the hyperkitty page.Now, you would be able to see the email sent to <strong>test@example.net</strong> in hyperkitty ui.</p>
+
+<blockquote>
+  <p>Please refer to <a href="http://hyperkitty.readthedocs.io/en/latest/install.html">Hyperkitty</a> for latest documentation.</p>
+</blockquote>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

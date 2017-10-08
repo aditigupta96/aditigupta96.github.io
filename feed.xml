@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aditi Gupta - Articles</title>
+    <description>Google WTM 2017 Scholar|GSoC&#39;17 @Systers|Google Code-In Mentor @Systers|GSoC&#39;16 @Systers|Intern @GeeksforGeeks</description>
+    <link>
+    http://aditigupta96.github.io/</link>
+    
+      
+      <item>
+        <title>My experience of Google APAC Women Techmakers Scholarship 2017</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;Life is full of unexpected surprises. There are many opportunities when one can secretly wish for something exciting to happen – something out of the ordinary. The real surprise is when the wish unexpectedly comes true. The same happened to me on the night of 18th July when I received an email from the Women Techmakers Scholars Program Team, congratulating me for being selected as a scholarship recipient. Wow !!! I could feel the adrenalin rushing up my body. I was among the &lt;strong&gt;71 scholars&lt;/strong&gt; of the &lt;strong&gt;APAC region&lt;/strong&gt; and was awarded a scholarship and an opportunity to attend the Scholars’ Retreat at Campus Seoul of Google.&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 15 Sep 2017 05:30:00 +0530</pubDate>
+        <link>
+        http://aditigupta96.github.io//My-experience-of-Google-APAC-Women-TechMakers-Scholarship</link>
+        <guid isPermaLink="true">http://aditigupta96.github.io//My-experience-of-Google-APAC-Women-TechMakers-Scholarship</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Configuration of Mailman to Hyperkitty</title>
+        
+          <description>&lt;p&gt;This is a quick guide to configure Mailman to hyperkitty.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 05 Jul 2017 05:30:00 +0530</pubDate>
+        <link>
+        http://aditigupta96.github.io//Configuration-of-Mailman-to-Hyperkitty</link>
+        <guid isPermaLink="true">http://aditigupta96.github.io//Configuration-of-Mailman-to-Hyperkitty</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>GSoC&#39;17  With  Systers</title>
+        
+          <description>&lt;p&gt;I am glad to share the feeling of being a part of the exclusive GSoC club after being selected in the Google Summer of Code program for the second time under &lt;strong&gt;Systers&lt;/strong&gt;. I have been a part of the Systers community for a long time being actively involved in the GSoC’16 program, Google Code-In’16 program and now, working as a student for the &lt;strong&gt;Systers Mailman3&lt;/strong&gt; project in GSoC’17 .&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 15 May 2017 05:30:00 +0530</pubDate>
+        <link>
+        http://aditigupta96.github.io//GSoC'17-With-Systers</link>
+        <guid isPermaLink="true">http://aditigupta96.github.io//GSoC'17-With-Systers</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Stats Implementation in Mailman3</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;My next task was to implement the stats feature in Mailman3.It had three parts.This is the detailed report of the implementation.&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 12 Aug 2016 05:30:00 +0530</pubDate>
+        <link>
+        http://aditigupta96.github.io//Stats-Implementation-in-Mailman3</link>
+        <guid isPermaLink="true">http://aditigupta96.github.io//Stats-Implementation-in-Mailman3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Send email in a thread in Mailman3</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;This is a quick guide to send email in a thread through Mailman3 command line.&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 01 Jul 2016 05:30:00 +0530</pubDate>
+        <link>
+        http://aditigupta96.github.io//Send-email-in-a-thread-in-Mailman3</link>
+        <guid isPermaLink="true">http://aditigupta96.github.io//Send-email-in-a-thread-in-Mailman3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Build Hyperkitty in easy way</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;This is a quick guide to build hyperkitty,the archive manager.&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 26 Jun 2016 05:30:00 +0530</pubDate>
+        <link>
+        http://aditigupta96.github.io//Build-Hyperkitty-in-easy-way</link>
+        <guid isPermaLink="true">http://aditigupta96.github.io//Build-Hyperkitty-in-easy-way</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Essay Implementation in Mailman3</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;My first task was to implement the essay feature in Mailman3. This is the detailed report of the implementation.&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 12 Jun 2016 05:30:00 +0530</pubDate>
+        <link>
+        http://aditigupta96.github.io//Essay-Implementation-in-Mailman3</link>
+        <guid isPermaLink="true">http://aditigupta96.github.io//Essay-Implementation-in-Mailman3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>GSoC&#39;16 With Systers</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;You Think And it happens.&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 27 Apr 2016 05:30:00 +0530</pubDate>
+        <link>
+        http://aditigupta96.github.io//GSoC'16-With-Systers</link>
+        <guid isPermaLink="true">http://aditigupta96.github.io//GSoC'16-With-Systers</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

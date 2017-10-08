@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>Essay Implementation in Mailman3</title>
+    <meta name="description" content="Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="http://aditigupta96.github.io///Essay-Implementation-in-Mailman3" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="Aditi Gupta" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Essay Implementation in Mailman3" />
+    <meta property="og:description" content="Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks" />
+    <meta property="og:url" content="http://aditigupta96.github.io///Essay-Implementation-in-Mailman3" />
+    <meta property="og:image" content="/assets/images/17.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Essay Implementation in Mailman3" />
+    <meta name="twitter:description" content="Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks" />
+    <meta name="twitter:url" content="http://aditigupta96.github.io///Essay-Implementation-in-Mailman3" />
+    <meta name="twitter:image:src" content="/assets/images/17.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Aditi Gupta",
+    "name": "Essay Implementation in Mailman3",
+    "url": "http://aditigupta96.github.io///Essay-Implementation-in-Mailman3",
+    "image": "/assets/images/17.jpg",
+    "description": "Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="Aditi Gupta" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-fables " role="presentation"><a href="/resume.pdf">Resume</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/projects">Projects</a></li>
+       <!-- <li class="nav-fiction " role="presentation"><a href="/tag/fiction">Fiction</a></li>
+        <li class="nav-author " role="presentation"><a href="/author/casper">Author</a></li> -->
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/17.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/17.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-test tag-content">
+
+        <header class="post-header">
+            <h1 class="post-title">Essay Implementation in Mailman3</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>Aditi Gupta</a> -->
+            <time class="post-date" datetime="2016-06-12">12 Jun 2016</time>
+                <!-- [[tags prefix=" on "]] -->
+                 
+                on 
+                
+                    
+                       <a href='/tag/GSoC'16'>Gsoc'16</a>,
+                       
+                
+                    
+                       <a href='/tag/Mailman3'>Mailman3</a>
+                       
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+            
+            <p><em>My first task was to implement the essay feature in Mailman3. This is the detailed report of the implementation.</em></p>
+
+<blockquote>
+  <p><strong>Overview</strong><br />
+An essay is a set of questions that can be asked by the list admin, which has to be answered by the subscriber in order to subscribe. These details can be viewed anytime by the admin.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><em>This is the list subscription page.The details entered through this form gets saved in an ‘essay’ model.</em>
+ <img src="assets/images/img.jpg" style="max-width:700px" /></p>
+  </li>
+  <li>
+    <p><em>This is the admins page where all subscription requests are listed. I have provided a “detail” button which will take us to that page where essay of that user can be viewed.</em></p>
+  </li>
+</ul>
+
+<p><img src="assets/images/img1.jpg" style="max-width:700px" /></p>
+
+<ul>
+  <li><em>This is the page where the admin can see all the information entered by the user. The essay is arranged according to date.</em></li>
+</ul>
+
+<p><img src="assets/images/img2.jpg" style="max-width:700px" /></p>
+
+<ul>
+  <li><em>This is the page where all subscribed members are listed. I have provided a “Essay Details” button which will take us to that page where essay of that user can be viewed.</em></li>
+</ul>
+
+<p><img src="assets/images/img3.jpg" style="max-width:700px" /></p>
+
+<blockquote>
+  <p><strong>Github</strong></p>
+</blockquote>
+
+<p><em>GitHub code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4/files">here</a>.<br />
+<em>The pull request for the code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4">here</a>.</p>
+
+<blockquote>
+  <p><strong>Functional Changes in Postorius</strong></p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><em>Model class ‘EssaySubscribe’ that stores the details entered by the user through the form during subscription request.</em></p>
+  </li>
+  <li>
+    <p><em>Modified forms.py according to Systers’ needs and store it to the database created in models.py.</em></p>
+  </li>
+  <li>
+    <p><em>Modified list.py to fetch the value from the form and store them in database.</em></p>
+  </li>
+  <li>
+    <p><em>Template ‘application.html’ to show the essay details.</em></p>
+  </li>
+  <li>
+    <p><em>View ‘essay.py’ for essay.</em></p>
+  </li>
+  <li>
+    <p><em>Modified ‘urls.py’ to give the path to template for essay.</em></p>
+  </li>
+  <li>
+    <p><em>Provided buttons on ‘subscription_requests.html’ and ‘members.html’.</em></p>
+  </li>
+</ul>
+
+<blockquote>
+  <p><strong>Files changed</strong></p>
+</blockquote>
+
+<ul>
+  <li><em>src/postorius/forms.py</em></li>
+  <li><em>src/postorius/models.py</em></li>
+  <li><em>src/postorius/templates/postorius/lists/members.html</em></li>
+  <li><em>src/postorius/templates/postorius/lists/subscription_requests.html</em></li>
+  <li><em>src/postorius/templates/postorius/lists/summary.html</em></li>
+  <li><em>src/postorius/urls.py</em></li>
+  <li><em>src/postorius/views/list.py</em></li>
+</ul>
+
+<blockquote>
+  <p><strong>Files created</strong></p>
+</blockquote>
+
+<ul>
+  <li><em>src/postorius/views/essay.py</em></li>
+  <li><em>src/postorius/templates/postorius/lists/application.html</em></li>
+</ul>
+
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/casper" style="background-image: url(/assets/images/casper2.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/casper">Aditi Gupta</a></h4>
+                
+                
+                    <p> Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location"> Jaipur, India</span> 
+                    <span class="author-link icon-link"><a href="http://aditigupta96.github.io/"> http://aditigupta96.github.io/</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=Essay Implementation in Mailman3&amp;url=http://aditigupta96.github.io/Essay-Implementation-in-Mailman3"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://aditigupta96.github.io/Essay-Implementation-in-Mailman3"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://aditigupta96.github.io/Essay-Implementation-in-Mailman3"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/15.jpg)" href="/Build-Hyperkitty-in-easy-way">
+            <section class="post">
+                <h2>Build Hyperkitty in easy way</h2>
+                <p>*This is a quick guide to build hyperkitty,the archive manager.* **HyperKitty** is the archiver project...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/12.png)" href="/GSoC'16-With-Systers">
+            <section class="post">
+                <h2>GSoC'16 With Systers</h2>
+                <p>You Think And it happens. I love the surprises life holds. Last year, I defined...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">Aditi Gupta</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! highlight.js ]] -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-69281367-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>
+</body>
+</html>

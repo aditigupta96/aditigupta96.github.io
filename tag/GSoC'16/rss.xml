@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>http://aditigupta96.github.io/</title>
+   
+   <link>http://aditigupta96.github.io/</link>
+   <description>Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks</description>
+   <language>en-uk</language>
+   <managingEditor> Aditi Gupta</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Stats Implementation in Mailman3</title>
+	  <link>//Stats-Implementation-in-Mailman3</link>
+	  <author>Aditi Gupta</author>
+	  <pubDate>2016-08-12T05:30:00+05:30</pubDate>
+	  <guid>//Stats-Implementation-in-Mailman3</guid>
+	  <description><![CDATA[
+	     <p><em>My next task was to implement the stats feature in Mailman3.It had three parts.This is the detailed report of the implementation.</em></p>
+
+<blockquote>
+  <p><strong>Overview</strong><br />
+<strong>Problem:</strong> Monthly reports are executed at the first of the month for prior month. Details in the report include, total number of members, subscription requests, digest members, and unsubscribes.</p>
+</blockquote>
+
+<p><strong>Desired Solution:</strong> <em>Add additional stats for the following:</em></p>
+<ul>
+<li> Number of unsubscribers for : 
+<ul>
+<li>Members option page</li>
+<li>Disabled address</li>
+<li>Member mgt page</li>
+<li>Admin mass Unsubscription</li>
+<li>email confirmation</li>
+(I am still working on the task of counting unsubscriptions through email confirmation.)
+</ul>
+</li>
+
+<li> Number of total unique subject lines </li>
+
+<li> Number of subscribers that posted </li>
+</ul>
+
+<blockquote>
+  <p><strong>Product</strong><br />
+These are the products’ images.</p>
+</blockquote>
+<ul>
+<li> This is the list subscription page.There is a "stats" button on the top right corner of the page which redirects to the stats page.
+</li>
+<img src="assets/images/img5.gif" style="max-width:700px" /> 
+
+<li>  This is the form where the admin can view either the monthly stats by pressing the "Monthly Stats" button or can view the stats according to the start and end date entered through the form.
+</li>
+<img src="assets/images/img4.png" style="max-width:700px" /> 
+
+<li>  This is the page where the admin can view all the monthly stats.The default page shows the stats of the present month.The admin can see the stats of any month by selecting it from the left sidebar.
+</li>
+<img src="assets/images/img6.jpg" style="max-width:700px" /> 
+</ul>
+
+<blockquote>
+  <p><strong>Github</strong></p>
+</blockquote>
+
+<p><em>GitHub code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4/files">here</a>.<br />
+<em>The pull request for the code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4">here</a>.</p>
+
+<blockquote>
+  <p><strong>Functional Changes in Postorius</strong></p>
+</blockquote>
+<ul>
+<li> Modal class 'UnsubscriberStats' that stores the details of the user unsubscribed through different channels. </li>
+
+<li> Added class'UnsubscriberStatsForm' in forms.py that takes start and end date as input and filters the stats between the given dates. </li>
+
+<li> Modified list.py to store the value of unsubscribed users through different channels in database. </li>
+
+<li> Provided 'Monthly Stats' button on the form page that takes the user to the page where stats are listed month-wise. </li>
+
+<li> Used 'Hyperkitty Api' to fetch the data of emails sent to a particular mailing list in the form of json file. </li>
+
+<li> Counted the unique subjects discussed in the mailing list and filtered them according to month for displaying the stats of 'Unique Subject Lines'. </li>
+
+<li> Counted the number of subscribers that posted by filtering the json file fetched from the Hyperkitty Api. </li>
+</ul>
+
+<blockquote>
+  <p><strong>Files changed</strong></p>
+</blockquote>
+<ul>
+<li> src/postorius/forms.py </li>
+<li> src/postorius/models.py </li>
+<li> src/postorius/templates/postorius/menu/list_nav.html </li>
+<li> src/postorius/urls.py </li>
+<li> src/postorius/views/list.py </li>
+<li> src/postorius/views/user.py </li>
+</ul>
+
+<blockquote>
+  <p><strong>Files created</strong></p>
+</blockquote>
+<ul>
+<li> src/postorius/static/postorius/js/datepicker.js </li>
+<li> src/postorius/views/stats.py </li>
+<li> src/postorius/templates/postorius/lists/stats_form.html </li>
+<li> src/postorius/views/monthly_stats.py </li>
+<li> src/postorius/templates/postorius/lists/monthly_stats.html</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Send email in a thread in Mailman3</title>
+	  <link>//Send-email-in-a-thread-in-Mailman3</link>
+	  <author>Aditi Gupta</author>
+	  <pubDate>2016-07-01T05:30:00+05:30</pubDate>
+	  <guid>//Send-email-in-a-thread-in-Mailman3</guid>
+	  <description><![CDATA[
+	     <p><em>This is a quick guide to send email in a thread through Mailman3 command line.</em></p>
+
+<p><em>To send the mails in a thread and view in hyperkitty ui, follow the following steps :</em></p>
+
+<ul>
+  <li><em>Activate virtual environment (python3) for mailman using :</em></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="n">venv3</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span></code></pre></figure>
+
+<ul>
+  <li><em>Create an email.txt file in mailman repository having following contents :</em></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">From</span><span class="p">:</span> <span class="n">aditi</span><span class="p">.</span><span class="nf">medha96</span><span class="vi">@gmail</span><span class="p">.</span><span class="nf">com</span>
+<span class="no">To</span><span class="p">:</span> <span class="nb">test</span><span class="vi">@example</span><span class="p">.</span><span class="nf">net</span>
+<span class="no">Subject</span><span class="p">:</span> <span class="no">Test</span>
+<span class="no">Message</span><span class="o">-</span><span class="no">ID</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">abcd</span><span class="o">&gt;</span>
+<span class="no">This</span> <span class="n">is</span> <span class="n">a</span> <span class="n">text</span> <span class="n">message</span><span class="o">.</span></code></pre></figure>
+
+<ul>
+  <li><em>Inject mail in the archive queue using :</em></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mailman</span> <span class="n">inject</span> <span class="o">-</span><span class="n">q</span> <span class="n">archive</span> <span class="o">-</span><span class="n">f</span> <span class="n">email</span><span class="p">.</span><span class="nf">txt</span> <span class="nb">test</span><span class="vi">@example</span><span class="p">.</span><span class="nf">net</span></code></pre></figure>
+
+<blockquote>
+  <p>A thread is created with the subject <strong>“Test”</strong>.To send an email to this thread, we need to send the message to <strong>message_id@domain.com</strong> of the list.</p>
+</blockquote>
+
+<ul>
+  <li><em>Create a reply.txt file in mailman repository having following contents :</em></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">From</span><span class="p">:</span> <span class="n">agarwalm214</span><span class="vi">@gmail</span><span class="p">.</span><span class="nf">com</span>
+<span class="no">In</span><span class="o">-</span><span class="no">Reply</span><span class="o">-</span><span class="no">To</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">abcd</span><span class="o">&gt;</span><span class="vi">@example</span><span class="p">.</span><span class="nf">net</span>
+<span class="no">Subject</span><span class="p">:</span> <span class="no">Test</span>
+<span class="no">Message</span><span class="o">-</span><span class="no">ID</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">xyz</span><span class="o">&gt;</span>
+<span class="no">Successful</span> <span class="n">message</span> <span class="n">to</span> <span class="n">the</span> <span class="n">thread</span><span class="o">.</span></code></pre></figure>
+
+<blockquote>
+  <p>Here, we changed <strong>“To”</strong> to <strong>“In-Reply-To”</strong>.</p>
+</blockquote>
+
+<ul>
+  <li><em>Inject mail in the archive queue using :</em></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mailman</span> <span class="n">inject</span> <span class="o">-</span><span class="n">q</span> <span class="n">archive</span> <span class="o">-</span><span class="n">f</span> <span class="n">replyl</span><span class="p">.</span><span class="nf">txt</span> <span class="nb">test</span><span class="vi">@example</span><span class="p">.</span><span class="nf">net</span></code></pre></figure>
+
+<p>Refresh the hyperkitty page. And there you go. You will find an unread message in the thread with the subject <strong>“Test”.</strong></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Essay Implementation in Mailman3</title>
+	  <link>//Essay-Implementation-in-Mailman3</link>
+	  <author>Aditi Gupta</author>
+	  <pubDate>2016-06-12T05:30:00+05:30</pubDate>
+	  <guid>//Essay-Implementation-in-Mailman3</guid>
+	  <description><![CDATA[
+	     <p><em>My first task was to implement the essay feature in Mailman3. This is the detailed report of the implementation.</em></p>
+
+<blockquote>
+  <p><strong>Overview</strong><br />
+An essay is a set of questions that can be asked by the list admin, which has to be answered by the subscriber in order to subscribe. These details can be viewed anytime by the admin.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><em>This is the list subscription page.The details entered through this form gets saved in an ‘essay’ model.</em>
+ <img src="assets/images/img.jpg" style="max-width:700px" /></p>
+  </li>
+  <li>
+    <p><em>This is the admins page where all subscription requests are listed. I have provided a “detail” button which will take us to that page where essay of that user can be viewed.</em></p>
+  </li>
+</ul>
+
+<p><img src="assets/images/img1.jpg" style="max-width:700px" /></p>
+
+<ul>
+  <li><em>This is the page where the admin can see all the information entered by the user. The essay is arranged according to date.</em></li>
+</ul>
+
+<p><img src="assets/images/img2.jpg" style="max-width:700px" /></p>
+
+<ul>
+  <li><em>This is the page where all subscribed members are listed. I have provided a “Essay Details” button which will take us to that page where essay of that user can be viewed.</em></li>
+</ul>
+
+<p><img src="assets/images/img3.jpg" style="max-width:700px" /></p>
+
+<blockquote>
+  <p><strong>Github</strong></p>
+</blockquote>
+
+<p><em>GitHub code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4/files">here</a>.<br />
+<em>The pull request for the code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4">here</a>.</p>
+
+<blockquote>
+  <p><strong>Functional Changes in Postorius</strong></p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><em>Model class ‘EssaySubscribe’ that stores the details entered by the user through the form during subscription request.</em></p>
+  </li>
+  <li>
+    <p><em>Modified forms.py according to Systers’ needs and store it to the database created in models.py.</em></p>
+  </li>
+  <li>
+    <p><em>Modified list.py to fetch the value from the form and store them in database.</em></p>
+  </li>
+  <li>
+    <p><em>Template ‘application.html’ to show the essay details.</em></p>
+  </li>
+  <li>
+    <p><em>View ‘essay.py’ for essay.</em></p>
+  </li>
+  <li>
+    <p><em>Modified ‘urls.py’ to give the path to template for essay.</em></p>
+  </li>
+  <li>
+    <p><em>Provided buttons on ‘subscription_requests.html’ and ‘members.html’.</em></p>
+  </li>
+</ul>
+
+<blockquote>
+  <p><strong>Files changed</strong></p>
+</blockquote>
+
+<ul>
+  <li><em>src/postorius/forms.py</em></li>
+  <li><em>src/postorius/models.py</em></li>
+  <li><em>src/postorius/templates/postorius/lists/members.html</em></li>
+  <li><em>src/postorius/templates/postorius/lists/subscription_requests.html</em></li>
+  <li><em>src/postorius/templates/postorius/lists/summary.html</em></li>
+  <li><em>src/postorius/urls.py</em></li>
+  <li><em>src/postorius/views/list.py</em></li>
+</ul>
+
+<blockquote>
+  <p><strong>Files created</strong></p>
+</blockquote>
+
+<ul>
+  <li><em>src/postorius/views/essay.py</em></li>
+  <li><em>src/postorius/templates/postorius/lists/application.html</em></li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

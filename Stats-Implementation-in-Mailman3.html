@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>Stats Implementation in Mailman3</title>
+    <meta name="description" content="Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="http://aditigupta96.github.io///Stats-Implementation-in-Mailman3" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="Aditi Gupta" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stats Implementation in Mailman3" />
+    <meta property="og:description" content="Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks" />
+    <meta property="og:url" content="http://aditigupta96.github.io///Stats-Implementation-in-Mailman3" />
+    <meta property="og:image" content="/assets/images/17.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stats Implementation in Mailman3" />
+    <meta name="twitter:description" content="Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks" />
+    <meta name="twitter:url" content="http://aditigupta96.github.io///Stats-Implementation-in-Mailman3" />
+    <meta name="twitter:image:src" content="/assets/images/17.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Aditi Gupta",
+    "name": "Stats Implementation in Mailman3",
+    "url": "http://aditigupta96.github.io///Stats-Implementation-in-Mailman3",
+    "image": "/assets/images/17.jpg",
+    "description": "Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="Aditi Gupta" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-fables " role="presentation"><a href="/resume.pdf">Resume</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/projects">Projects</a></li>
+       <!-- <li class="nav-fiction " role="presentation"><a href="/tag/fiction">Fiction</a></li>
+        <li class="nav-author " role="presentation"><a href="/author/casper">Author</a></li> -->
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/17.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/17.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-test tag-content">
+
+        <header class="post-header">
+            <h1 class="post-title">Stats Implementation in Mailman3</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>Aditi Gupta</a> -->
+            <time class="post-date" datetime="2016-08-12">12 Aug 2016</time>
+                <!-- [[tags prefix=" on "]] -->
+                 
+                on 
+                
+                    
+                       <a href='/tag/Postorius'>Postorius</a>,
+                       
+                
+                    
+                       <a href='/tag/Mailman3'>Mailman3</a>,
+                       
+                
+                    
+                       <a href='/tag/GSoC'16'>Gsoc'16</a>
+                       
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+            
+            <p><em>My next task was to implement the stats feature in Mailman3.It had three parts.This is the detailed report of the implementation.</em></p>
+
+<blockquote>
+  <p><strong>Overview</strong><br />
+<strong>Problem:</strong> Monthly reports are executed at the first of the month for prior month. Details in the report include, total number of members, subscription requests, digest members, and unsubscribes.</p>
+</blockquote>
+
+<p><strong>Desired Solution:</strong> <em>Add additional stats for the following:</em></p>
+<ul>
+<li> Number of unsubscribers for : 
+<ul>
+<li>Members option page</li>
+<li>Disabled address</li>
+<li>Member mgt page</li>
+<li>Admin mass Unsubscription</li>
+<li>email confirmation</li>
+(I am still working on the task of counting unsubscriptions through email confirmation.)
+</ul>
+</li>
+
+<li> Number of total unique subject lines </li>
+
+<li> Number of subscribers that posted </li>
+</ul>
+
+<blockquote>
+  <p><strong>Product</strong><br />
+These are the products’ images.</p>
+</blockquote>
+<ul>
+<li> This is the list subscription page.There is a "stats" button on the top right corner of the page which redirects to the stats page.
+</li>
+<img src="assets/images/img5.gif" style="max-width:700px" /> 
+
+<li>  This is the form where the admin can view either the monthly stats by pressing the "Monthly Stats" button or can view the stats according to the start and end date entered through the form.
+</li>
+<img src="assets/images/img4.png" style="max-width:700px" /> 
+
+<li>  This is the page where the admin can view all the monthly stats.The default page shows the stats of the present month.The admin can see the stats of any month by selecting it from the left sidebar.
+</li>
+<img src="assets/images/img6.jpg" style="max-width:700px" /> 
+</ul>
+
+<blockquote>
+  <p><strong>Github</strong></p>
+</blockquote>
+
+<p><em>GitHub code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4/files">here</a>.<br />
+<em>The pull request for the code changes can be seen</em> <a href="https://github.com/systers/postorius/pull/4">here</a>.</p>
+
+<blockquote>
+  <p><strong>Functional Changes in Postorius</strong></p>
+</blockquote>
+<ul>
+<li> Modal class 'UnsubscriberStats' that stores the details of the user unsubscribed through different channels. </li>
+
+<li> Added class'UnsubscriberStatsForm' in forms.py that takes start and end date as input and filters the stats between the given dates. </li>
+
+<li> Modified list.py to store the value of unsubscribed users through different channels in database. </li>
+
+<li> Provided 'Monthly Stats' button on the form page that takes the user to the page where stats are listed month-wise. </li>
+
+<li> Used 'Hyperkitty Api' to fetch the data of emails sent to a particular mailing list in the form of json file. </li>
+
+<li> Counted the unique subjects discussed in the mailing list and filtered them according to month for displaying the stats of 'Unique Subject Lines'. </li>
+
+<li> Counted the number of subscribers that posted by filtering the json file fetched from the Hyperkitty Api. </li>
+</ul>
+
+<blockquote>
+  <p><strong>Files changed</strong></p>
+</blockquote>
+<ul>
+<li> src/postorius/forms.py </li>
+<li> src/postorius/models.py </li>
+<li> src/postorius/templates/postorius/menu/list_nav.html </li>
+<li> src/postorius/urls.py </li>
+<li> src/postorius/views/list.py </li>
+<li> src/postorius/views/user.py </li>
+</ul>
+
+<blockquote>
+  <p><strong>Files created</strong></p>
+</blockquote>
+<ul>
+<li> src/postorius/static/postorius/js/datepicker.js </li>
+<li> src/postorius/views/stats.py </li>
+<li> src/postorius/templates/postorius/lists/stats_form.html </li>
+<li> src/postorius/views/monthly_stats.py </li>
+<li> src/postorius/templates/postorius/lists/monthly_stats.html</li>
+</ul>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/casper" style="background-image: url(/assets/images/casper2.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/casper">Aditi Gupta</a></h4>
+                
+                
+                    <p> Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location"> Jaipur, India</span> 
+                    <span class="author-link icon-link"><a href="http://aditigupta96.github.io/"> http://aditigupta96.github.io/</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=Stats Implementation in Mailman3&amp;url=http://aditigupta96.github.io/Stats-Implementation-in-Mailman3"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://aditigupta96.github.io/Stats-Implementation-in-Mailman3"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://aditigupta96.github.io/Stats-Implementation-in-Mailman3"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/14.png)" href="/GSoC'17-With-Systers">
+            <section class="post">
+                <h2>GSoC'17  With  Systers</h2>
+                <p>I am glad to share the feeling of being a part of the exclusive GSoC...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/17.jpg)" href="/Send-email-in-a-thread-in-Mailman3">
+            <section class="post">
+                <h2>Send email in a thread in Mailman3</h2>
+                <p>This is a quick guide to send email in a thread through Mailman3 command line....</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">Aditi Gupta</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! highlight.js ]] -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-69281367-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>
+</body>
+</html>

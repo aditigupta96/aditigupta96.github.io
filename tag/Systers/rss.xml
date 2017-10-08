@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>http://aditigupta96.github.io/</title>
+   
+   <link>http://aditigupta96.github.io/</link>
+   <description>Google WTM 2017 Scholar|GSoC'17 @Systers|Google Code-In Mentor @Systers|GSoC'16 @Systers|Intern @GeeksforGeeks</description>
+   <language>en-uk</language>
+   <managingEditor> Aditi Gupta</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>GSoC'17  With  Systers</title>
+	  <link>//GSoC'17-With-Systers</link>
+	  <author>Aditi Gupta</author>
+	  <pubDate>2017-05-15T05:30:00+05:30</pubDate>
+	  <guid>//GSoC'17-With-Systers</guid>
+	  <description><![CDATA[
+	     <p>I am glad to share the feeling of being a part of the exclusive GSoC club after being selected in the Google Summer of Code program for the second time under <strong>Systers</strong>. I have been a part of the Systers community for a long time being actively involved in the GSoC’16 program, Google Code-In’16 program and now, working as a student for the <strong>Systers Mailman3</strong> project in GSoC’17 .</p>
+
+<blockquote>
+  <p><strong>GNU Mailman3</strong><br />
+Mailman, the GNU Mailing List Manager is a free software for managing electronic mail discussion and e-newsletter lists. Mailman is integrated with the web, making it easy for users to manage their accounts and for list owners to administer their lists. Mailman supports built-in archiving, automatic bounce processing, content filtering, digest delivery, spam filters, and more.</p>
+</blockquote>
+
+<p>The objective of this project is to port the existing features of Systers Mailman2 version to the newer released version of Mailman i.e Mailman 3.1. The features that needs to be ported includes :</p>
+<ul>
+  <li>Essay</li>  
+  <li>Stats for Admins</li>  
+  <ul>
+     <li>Number of subscribers/unsubscribers.</li>
+     <li>Number of total unique subject lines.</li>
+     <li>Number of subscribers that posted.</li>
+  </ul>
+</ul>
+<p>I hope I will be able to do justice to the trust that my mentor has shown in me by selecting me for the project. Here’s to a great summer ahead!</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>GSoC'16 With Systers</title>
+	  <link>//GSoC'16-With-Systers</link>
+	  <author>Aditi Gupta</author>
+	  <pubDate>2016-04-27T05:30:00+05:30</pubDate>
+	  <guid>//GSoC'16-With-Systers</guid>
+	  <description><![CDATA[
+	     <p><em>You Think And it happens.</em></p>
+
+<p><em>I love the surprises life holds. Last year, I defined a role I really wanted to pursue when I was in my first year then… I Knew it was kind of a thought and maybe not even ideal for me but I just knew, I wanted it!</em></p>
+
+<p><em>This year I got selected for <strong>Systers Mailman3 Project</strong> under <strong>Google Summer of code’16 program</strong>.</em></p>
+
+<p><em>I started looking for Organizations right after the List of Accepted Organization was posted.I needed an organization that suited to my interests.I wanted to work in python. So, I narrowed down my search to python projects and I ended up choosing <strong>“Systers Features for Mailman 3”</strong> project offered by the <strong>“Systers Organization”</strong>.I wanted to contribute to open source so that,I could create and manage interactive learning material and softwares that would be available online to everyone and help other women in computing.</em></p>
+
+<p><em>After selecting the organization, I introduced myself to the Systers and the Mailman communities.I joined their slack and irc channels.I got familiar with their workflow.There were times when I faced lots of difficulties.It took me time to understand how a particular piece of code worked, or about the required technology.I used to clear my doubts by asking questions to the established developers of that project.As I was new to the open source community, I made many mistakes but my mentors<strong>(Stephen J Turnbull , Sneha Bhattacharya, Khushboo Surana, Harshita Kasera )</strong> corrected me everytime. I used to ask my every doubt with mentors.But, Stephen taught me that <strong>“Asking is not stupid and will see you through a lot of unnecessary struggle but learning to make your mind do that jumping instead of asking questions (which are like bridges) is a key aspect of becoming a ‘software engineer’</strong>. Coding is important, knowing the language and existing code is important, but creating something new is where most of the value-added comes from.” I learnt to be patient.I learnt that patience is not the ability to wait but how you act while you’re waiting.</em></p>
+
+<p><em>While building the local environment in my system, I found a correction in the documentation of installation of mailman.I filed an issue regarding the correction and got it fixed.Although small, my first patch boosted my confidence.</em></p>
+
+<p><em>My next step was to complete the proposal.I submitted my draft proposal by 18th March’16.I asked the mentors for advice and opinions on my proposal.They gave me insights of the project and things to think about.I modified my proposal accordingly,and asked them to re-review everytime I made changes.I repeated this until the last day.</em></p>
+
+<p><em>I did my job with the proposal and Summer of Code formalities.I just had one thing in my mind whether I get selected or not it really didn’t matter.I gave it my best shot. After submission,I continued contributing.I started with some bug-fixing in GNU Mailman.I fixed around 2 bugs which were opened on gitlab and filed 1 more issue on github.When this got accepted it gave me a moral boost to contribute more.I was a member of a community now, I was the part of why the organisation’s product runs the way it does, even if it’s a tiny part.</em></p>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
